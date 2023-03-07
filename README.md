@@ -1,6 +1,6 @@
 # date-calculate
 
-112/02/28|決算日|
+112/02/28|決算日|  
 112/01/31|上月底|=LEFT($B$3,7)&DAY(EOMONTH($B$13,-1))  
 112/01/01|上月初|=IF(MID($B$1,5,2)-1<1,MID($B$1,1,3)-1&"/"&$B$10,MID($B$1,1,3)&"/"&$B$10)  
 111/02/28|去年同期決算日|=MID($B$1,1,3)-1&"/"&MID($B$1,5,2)&"/"&DAY(EOMONTH($B$13,-12))  
@@ -13,7 +13,8 @@
 3/01|下月初(未補齊)|=IF(MID($B$1,5,2)+1>12,MID($B$1,5,2)+1-12,MID($B$1,5,2)+1)&"/01"  
 1/01|上月初(未補齊)|=IF(MID($B$1,5,2)-1<1,MID($B$1,5,2)-1+12,MID($B$1,5,2)-1)&"/01"  
 2023/02/28|決算日(西元)|= TEXT(DATE(MID($B$1,1,3)+1911,MID($B$1,5,2),MID($B$1,8,2)),"yyyy/mm/dd")  
-112/3/31|決算日(當日判斷)|=IF(DAY(TODAY())*1<7,YEAR(EOMONTH(TODAY(),-1))-1911&"/"&MONTH(EOMONTH(TODAY(),-1))&"/"&DAY(EOMONTH(TODAY(),-1)),YEAR(EOMONTH(TODAY(),0))-1911&"/"&MONTH(EOMONTH(TODAY(),0))&"/"&DAY(EOMONTH(TODAY(),0)))    
+112/3/31|決算日(當日判斷)|=IF(DAY(TODAY())*1<7,YEAR(EOMONTH(TODAY(),-1))-1911&"/"&MONTH(EOMONTH(TODAY(),-1))&"/"&DAY(EOMONTH(TODAY(),-1)),YEAR(EOMONTH(TODAY(),0))-1911&"/"&MONTH(EOMONTH(TODAY(),0))&"/"&DAY(EOMONTH(TODAY(),0)))  
+
 111 (11)|"&$B$16&"|=LEFT($B$26,3)&" ("&MID($B$26,5,2)&")"  
 111 (12)|"&$B$17&"|=LEFT($B$20,3)&" ("&MID($B$20,5,2)&")"  
 112 (01)|"&$B$18&"|=LEFT($B$2,3)&" ("&MID($B$2,5,2)&")"  
